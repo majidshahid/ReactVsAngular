@@ -1,4 +1,5 @@
-
+import Name from './component/name';
+import {Number,Address,Subject} from './component/info';
 function React(){
   return(
  <div>
@@ -51,38 +52,42 @@ function SpaVsMpa(){
 </div>
   );
 }
-// function  Angular(){
-//   return (
-// <div>
-// <h1>ANGULAR</h1>
-// <ul>
-//     <li>ANGULAR Own by google</li>
-//     <li> Angular is initial relese in 2013 </li>
-//     <li>TWOWAY data binding</li>
-//     <li>Open source</li>
-// </ul>
-//     <h1>What is Library?</h1>
-// <ul>
-//     <li>React is a JavaScript library for building user interfaces.</li>
-//     <li>A Library is a set of code that was previously written by a developer that you can call when you are building your project.</li>
-//     <li>In Library, you import or call specific methods that you need for your project.</li>
-//     <li>library is a bunch of code packed together that can be used repeatedly</li>
-//     <li>Reusability is one of the main reasons to use libraries</li>
-// </ul>
-// </div>
-//   );
-// } 
+function  Angular(){
+  return (
+<div>
+<h1>ANGULAR</h1>
+<ul>
+    <li>ANGULAR Own by google</li>
+    <li> Angular is initial relese in 2013 </li>
+    <li>TWOWAY data binding</li>
+    <li>Open source</li>
+</ul>
+    <h1>What is Library?</h1>
+<ul>
+    <li>React is a JavaScript library for building user interfaces.</li>
+    <li>A Library is a set of code that was previously written by a developer that you can call when you are building your project.</li>
+    <li>In Library, you import or call specific methods that you need for your project.</li>
+    <li>library is a bunch of code packed together that can be used repeatedly</li>
+    <li>Reusability is one of the main reasons to use libraries</li>
+</ul>
+</div>
+  );
+} 
 
 function App() {
   
   return (
-  
+  <div>
+    <Name />
+    <Address/>
+    <Number/>
+    <Subject/>
  <React />,
-  <SpaVsMpa />
-  // <Angular/>
- 
+  <SpaVsMpa />,
+  <Angular/>
+  </div>
 
-  )
+  );
 }
 
 export default App;
