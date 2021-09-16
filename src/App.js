@@ -135,18 +135,28 @@ function App(){
     a.push(value);
     settodo(a)
     
-    console.log(todo)
+   
+  
   }
   var dltall=()=>{
       settodo([])
   }
 
   var dlt =(li)=>{
-settodo.splice(li,1)
+todo.splice(li, 1);
+settodo(todo)
+  }
+  var edittodo =(v,i)=>{
+
+var a= prompt("enter you new todo",v);
+console.log(a)
+var item = todo;
+item.splice(i,1,a)
+console.log(item)
   }
   return (
     <div>
-      <Input change={(e)=>setvalue(e.target.value)} type="input" placeholder="TODO" />
+      <Input  change={(e)=>setvalue(e.target.value)} type="input" placeholder="TODO" />
 
 <Button onClick={addtodo} title="ADD TODO"/>
 <Button onClick={dltall} title="Delete All"/>
@@ -154,7 +164,7 @@ settodo.splice(li,1)
 
 <ul>
   {todo.map((v,i)=>{
-    return <li key ={i}>{v}  <button onClick={()=>dlt(i)}>delet</button></li>
+    return <li key ={i}>{v}  <button onClick={()=>dlt(i)}>delet</button>  <Button onClick={()=>edittodo(v,i)} title="EDIT TODO"/></li>
   })}
 </ul>
     </div>
